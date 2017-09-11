@@ -9,16 +9,17 @@
 
 m =(1,2,3)
 a,b,c = m
-print a
-print b
-print c
-data = ('susai','25',(1991,03,15))
+print(a)
+print(b)
+print(c)
+data = ('susai','25',(1991,3,15))
 name,age,dob=data
-print name
-print age
-print dob
+print(name)
+print(age)
+print (dob)
 name,age,(year,month,day)=data
-print year
+print(month)
+print (year)
 s='hello'
 first,second,third,fourth,fifth = s
-print first
+print (first)
