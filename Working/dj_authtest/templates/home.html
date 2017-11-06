@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>
+
+    .div-container {
+        float:left;
+        width: 25%;
+        border-radius: 15px;
+
+    }
+     #rcorners3 {
+         border-radius: 12px;
+         background: lavender;
+         background-position: left top;
+         background-repeat: repeat;
+         padding: 225px 57px 52px;
+         width: 93%;
+     }
+     p{
+         text-align: center;
+         margin-top: -87px;
+     }
+    .w3-teal, .w3-hover-teal:hover{
+        width: 25%;
+    }
+    </style>
+    <div style="padding: 10px 48px 0px;">
+    <div class="row">
+        <div class="div-container">
+            <div id="rcorners3">
+                <p><a href="/so_list"> Module </a></p>
+            </div>
+        </div>
+        <div class="div-container">
+            <div id="rcorners3">
+                <p><li><a href="/po_list">Po Delivery Manager</a></li></p>
+
+            </div>
+        </div>
+        <div class="div-container">
+            <div id="rcorners3">
+                <p>Mo Manager/Mo Tracker</p>
+            </div>
+        </div>
+        <div class="div-container">
+            <div id="rcorners3">
+                <p>Delivery Manager</p>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="div-container">
+            <div id="rcorners3">
+                <p>Master Data</p>
+{#                <p>Po Delivery Master</p>#}
+{#                <p>Product Master</p>#}
+{#                <p>Purchased Parts Master</p>#}
+{#                <p>Customer Master</p>#}
+{#                <p>Sheet Master</p>#}
+{#                <p>Tool Master</p>#}
+{#                <p>Company Calender</p>#}
+{#                <p>Inventory</p>#}
+            </div>
+        </div><div class="div-container">
+            <div id="rcorners3">
+                <p>Manager[out sourcing]</p>
+                <p>Receive Items</p>
+                <p>Place Order</p>
+            </div>
+        </div><div class="div-container">
+            <div id="rcorners3">
+                <p>Receive Items Manager</p>
+            </div>
+        </div><div class="div-container">
+            <div id="rcorners3">
+                <p>Finance Manager</p>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+
+{% endblock %}

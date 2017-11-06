@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<h1 style="text-align: center">Product List</h1>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+ .btn {
+    display: inline-block;
+    padding: 3px 5px;
+    margin-bottom: 0;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 0px;
+    /* height: 1px; */
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+
+</style>
+</head>
+<body>
+   {% comment %} <a href="{% url 'post_new' %}" class="btn btn-primary a-btn-slide-text">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span><strong>Add</strong></span>
+    </a>{% endcomment %}
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>Category Id</th>
+    <th>Product Type</th>
+  </tr>
+    {% for post in product_ids %}
+        <tr>
+            <td>{{ post.name }}
+            <td>{{ post.type }}</td>
+            <td>{{ post.categ_id.1 }}</td>
+{#            <td><a href="{% url 'post_detail' pk=post.pk %}">{{ post.name }}</a></td>#}
+{#            <td>#}
+{#                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary a-btn-slide-text">#}
+{#                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>#}
+{#                    <span><strong>Edit</strong></span>#}
+{#                </a>#}
+{#            </td>#}
+{#        <td>#}
+{#            <a href="{% url 'post_delete' pk=post.pk %}" class="btn btn-primary a-btn-slide-text">#}
+{#               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>#}
+{#                <span><strong>Delete</strong></span>#}
+{#            </a>#}
+{#        </td>#}
+        </tr>
+{% endfor %}
+</table>
+{% endblock %}
+
+</body>
+</html>
