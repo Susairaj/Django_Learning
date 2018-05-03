@@ -58,13 +58,13 @@ tr:nth-child(even) {
             <td>{{ post.name }}
             <td>{{ post.type }}</td>
             <td>{{ post.categ_id.1 }}</td>
-{#            <td><a href="{% url 'post_detail' pk=post.pk %}">{{ post.name }}</a></td>#}
-{#            <td>#}
-{#                <a href="{% url 'post_edit' pk=post.pk %}" class="btn btn-primary a-btn-slide-text">#}
-{#                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>#}
-{#                    <span><strong>Edit</strong></span>#}
-{#                </a>#}
-{#            </td>#}
+            <td><a href="{% url 'post_detail' pk=post.id %}">{{ post.name }}</a></td>
+            <td>
+                <a href="{% url 'post_edit' pk=post.id %}" class="btn btn-primary a-btn-slide-text">
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    <span><strong>Edit</strong></span>
+                </a>
+            </td>
 {#        <td>#}
 {#            <a href="{% url 'post_delete' pk=post.pk %}" class="btn btn-primary a-btn-slide-text">#}
 {#               <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>#}

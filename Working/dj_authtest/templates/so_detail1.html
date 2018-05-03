@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So Detail</title>
+</head>
+<body>
+<p>Test One Two Three</p>
+{% block content %}
+    {% post %}
+    {% comment %}<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a class="btn btn-default" href="{% url 'post_delete' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>{% endcomment %}
+    <div class="post">
+        {% comment %}{% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>{% endcomment %}
+        {{ post.name }}
+        {{ post.type }}
+        {{ post.categ_id.1 }}
+    </div>
+{% endblock %}
+
+</body>
+</html>

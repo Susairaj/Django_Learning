@@ -47,7 +47,9 @@ def so_list(request):
     return render(request, "so_list.html",{'product_ids': product_list_with_names})
 
 def post_detail(request,pk):
-    post = get_object_or_404(Post, pk=pk)
+    # post = get_object_or_404(Post, pk=pk)
+    post = get_odoo_instance.odoo.env['product.product'].search_read([('id','=',int(pk))], ['name','categ_id','type'])
+    print post
     return render(request, 'so_detail.html', {'post': post})
 
 def post_new(request):
@@ -63,7 +65,11 @@ def post_new(request):
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
 def post_edit(request, pk):
-    post = get_object_or_404(Post, pk=pk)
+    print pk
+    print request.method
+    # post = get_object_or_404(Post, pk=pk)
+    post = get_odoo_instance.odoo.env['product.product'].search_read([('id', '=', int(pk))],
+                                                                     ['name', 'categ_id', 'type'])
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -73,8 +79,8 @@ def post_edit(request, pk):
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
-        form = PostForm(instance=post)
-    return render(request, 'post_edit.html', {'form': form})
+        # form = PostForm(instance=post)
+        return render(request, 'post_edit.html', {'post': post})
 
 def post_delete(request,pk):
     obj=Post.objects.get(id=pk)
